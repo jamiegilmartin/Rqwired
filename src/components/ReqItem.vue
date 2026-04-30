@@ -55,6 +55,8 @@ const updateReq = () => {
   color: #fff;
   background: var(--bg-transparent);
   padding: 10px;
+  position:relative;
+  z-index: 10;
   p.title {
     text-align: center;
     font-weight: bold;

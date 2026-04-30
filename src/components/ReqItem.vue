@@ -34,7 +34,7 @@ const store = useReqStore();
 
 // props
 const props = defineProps<{
-  req?: Req;
+  req: Req;
 }>();
 
 const rating = ref(props.req.rating || 0);

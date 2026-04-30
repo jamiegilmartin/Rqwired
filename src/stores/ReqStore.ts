@@ -8,10 +8,10 @@ export const useReqStore = defineStore("reqs", () => {
 
   const reqs = ref<Req[]>([]);
 
-  const setReqs = (reqs: Req[]) => {
-    reqs.value = reqs;
+  const setReqs = (newReqs: Req[]) => {
+    reqs.value = newReqs;
     isInitialized.value = true;
-    localStorage.setItem(lsKey, JSON.stringify(reqs));
+    localStorage.setItem(lsKey, JSON.stringify(newReqs));
   };
 
   const addReq = (req: Omit<Req, "id" | "createdAt" | "updatedAt">) => {
@@ -51,9 +51,6 @@ export const useReqStore = defineStore("reqs", () => {
     return req || null;
   };
 
-  const getReqsByTag = (type: string): Req[] => {
-    return reqs.value.filter((req:Req) => req.tags.includes(type));
-  };
 
   const getAllReqs = (): Req[] => {
     return reqs.value;
@@ -78,7 +75,6 @@ export const useReqStore = defineStore("reqs", () => {
     updateReq,
     getReq,
     getAllReqs,
-    getReqsByTag,
     loadFromLocalStorage,
     clearAll,
   };

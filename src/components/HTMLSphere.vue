@@ -41,10 +41,6 @@
         {{ point.name }}
       </div>
 
-      <!-- <div v-for="edge of e" class="edge" :style="{'transform' : edge.transform }" :key="edge">
-            {{point.name}}
-        </div>  -->
-
       <div
         v-for="(point, index) of data_points"
         class="point data_point"
@@ -60,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, reactive, watch, onMounted } from "vue";
+import { ref, watch, onMounted } from "vue";
 import { useElementSize } from "@vueuse/core";
 import AnimationUtils from "@/lib/AnimationUtils";
 import ThreeDMap from "@/components/ThreeDMap.vue";
@@ -131,7 +127,7 @@ const coordinates = (e: MouseEvent) => {
 
 const init = () => {
   w.value = 777; // width.value
-  h.value = 777; //width.value
+  h.value = 777; //height.value
   c = {
     x: w.value / 2,
     y: h.value / 2,

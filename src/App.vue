@@ -15,7 +15,6 @@
 <script setup lang="ts">
 import Home from "@/components/Home.vue";
 import Menu from "@/components/Menu.vue";
-import ReqForm from "@/components/ReqForm.vue";
 </script>
 
 <style scoped type="scss">
